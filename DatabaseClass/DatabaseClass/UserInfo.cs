@@ -21,66 +21,14 @@ namespace DatabaseClass
             InitializeComponent();
         }
 
-        public static byte[] ReadToEnd(Stream stream)
-        {
-            long originalPosition = 0;
-
-            if (stream.CanSeek)
-            {
-                originalPosition = stream.Position;
-                stream.Position = 0;
-            }
-
-            try
-            {
-                byte[] readBuffer = new byte[4096];
-
-                int totalBytesRead = 0;
-                int bytesRead;
-
-                while ((bytesRead = stream.Read(readBuffer, totalBytesRead, readBuffer.Length - totalBytesRead)) > 0)
-                {
-                    totalBytesRead += bytesRead;
-
-                    if (totalBytesRead == readBuffer.Length)
-                    {
-                        int nextByte = stream.ReadByte();
-                        if (nextByte != -1)
-                        {
-                            byte[] temp = new byte[readBuffer.Length];
-                            Buffer.BlockCopy(readBuffer, 0, temp, 0, readBuffer.Length);
-                            Buffer.SetByte(temp, totalBytesRead, (byte)nextByte);
-                            readBuffer = temp;
-                            totalBytesRead++;
-                        }
-                    }
-                }
-
-                byte[] buffer = readBuffer;
-                if (readBuffer.Length != totalBytesRead)
-                {
-                    buffer = new byte[totalBytesRead];
-                    Buffer.BlockCopy(readBuffer, 0, buffer, 0, totalBytesRead);
-                }
-                return buffer;
-            }
-            finally
-            {
-                if (stream.CanSeek)
-                {
-                    stream.Position = originalPosition;
-                }
-            }
-        }
-
+        //image upload 
         private void button2_Click(object sender, EventArgs e)
         {
-          
+            //open file explorer and accept users image
             Stream myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
             openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "PEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg";
+            openFileDialog1.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
 
@@ -93,12 +41,11 @@ namespace DatabaseClass
                         using (myStream)
                         {
                             //TODO save to database
-
                             var image = Bitmap.FromStream(myStream);
 
-                            using (SqlConnection con = new SqlConnection(@"Data Source=(localdb)\ProjectsV13;Initial Catalog=tempdb;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
+                            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MKRJETA;Initial Catalog=date_app;Integrated Security=True"))
                             {
-                                string query = "insert into date_users (user_profile_pic) values (@user_profile_pic)";
+                                string query = "insert into user_create_profile (user_profile_pic) values (@user_profile_pic)";
                                 using (SqlCommand cmd = new SqlCommand(query, con))
                                 {
                                     con.Open();
@@ -135,17 +82,17 @@ namespace DatabaseClass
             }
             else
             {
+                //hash password
                 HashAlgorithm passHash = new SHA1CryptoServiceProvider();
                 byte[] bytePass = Encoding.ASCII.GetBytes(pass);
                 byte[] passHashed = passHash.ComputeHash(bytePass);
 
-                //TODO save hash password to database and other crap
-                //open sql connection and increment the yes count in database
+                //open sql connection
                 using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MKRJETA;Initial Catalog=date_app;Integrated Security=True"))
                 {
-
-                    //added rate
-                    string query = "insert into user_create_profile (user_name , user_password , user_age, user_intent , user_about_me, user_interests) values (@user_name , @user_password, @user_age, @user_intent,  @user_about_me, @user_interests)";
+                    //TODO: generate new icon for browse section of user
+                    //add created profile
+                    string query = "insert into user_create_profile (user_name , user_password , user_age, user_intent , user_about_me, user_interests , user_upgraded) values (@user_name , @user_password, @user_age, @user_intent,  @user_about_me, @user_interests , @user_upgraded)";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         con.Open();
@@ -155,6 +102,7 @@ namespace DatabaseClass
                         cmd.Parameters.AddWithValue("@user_intent", intent);
                         cmd.Parameters.AddWithValue("@user_about_me", aboutMe);
                         cmd.Parameters.AddWithValue("@user_interests", interest);
+                        cmd.Parameters.AddWithValue("@user_upgraded", 0);
                         cmd.ExecuteNonQuery();
                         con.Close();
                     }

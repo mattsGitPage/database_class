@@ -58,9 +58,7 @@ namespace DatabaseClass
 
         private void logout_Click(object sender, EventArgs e)
         {
-
-
-
+            MessageBox.Show("exiting from the dating application");
             //exit
             this.Close();
         }
