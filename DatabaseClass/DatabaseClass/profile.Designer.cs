@@ -33,21 +33,25 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.Label();
+            this.age = new System.Windows.Forms.Label();
+            this.intent = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
+            this.city = new System.Windows.Forms.Label();
+            this.boutme = new System.Windows.Forms.Label();
+            this.interest = new System.Windows.Forms.Label();
+            this.home = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(381, 22);
+            this.vScrollBar1.Location = new System.Drawing.Point(380, 9);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(21, 235);
+            this.vScrollBar1.Size = new System.Drawing.Size(22, 429);
             this.vScrollBar1.TabIndex = 0;
             // 
             // pictureBox1
@@ -86,50 +90,51 @@
             this.label3.Text = "intent";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label4
+            // name
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(308, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "label4";
+            this.name.AutoSize = true;
+            this.name.Location = new System.Drawing.Point(308, 9);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(55, 17);
+            this.name.TabIndex = 5;
+            this.name.Text = "name...";
+            this.name.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label5
+            // age
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(308, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "label5";
+            this.age.AutoSize = true;
+            this.age.Location = new System.Drawing.Point(308, 40);
+            this.age.Name = "age";
+            this.age.Size = new System.Drawing.Size(44, 17);
+            this.age.TabIndex = 6;
+            this.age.Text = "age...";
             // 
-            // label6
+            // intent
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(308, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "label6";
+            this.intent.AutoSize = true;
+            this.intent.Location = new System.Drawing.Point(308, 75);
+            this.intent.Name = "intent";
+            this.intent.Size = new System.Drawing.Size(51, 17);
+            this.intent.TabIndex = 7;
+            this.intent.Text = "intent..";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(22, 167);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.Size = new System.Drawing.Size(29, 17);
             this.label7.TabIndex = 8;
-            this.label7.Text = "about me";
+            this.label7.Text = "city";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(25, 202);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 17);
+            this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 9;
-            this.label8.Text = "label8";
+            this.label8.Text = "about me";
             // 
             // label9
             // 
@@ -140,27 +145,69 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Interests";
             // 
-            // button1
+            // edit
             // 
-            this.button1.Location = new System.Drawing.Point(31, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "message";
-            this.button1.UseVisualStyleBackColor = true;
+            this.edit.Location = new System.Drawing.Point(31, 415);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(118, 23);
+            this.edit.TabIndex = 12;
+            this.edit.Text = "edit profile";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
+            // 
+            // city
+            // 
+            this.city.AutoSize = true;
+            this.city.Location = new System.Drawing.Point(149, 167);
+            this.city.Name = "city";
+            this.city.Size = new System.Drawing.Size(41, 17);
+            this.city.TabIndex = 13;
+            this.city.Text = "city...";
+            // 
+            // boutme
+            // 
+            this.boutme.AutoSize = true;
+            this.boutme.Location = new System.Drawing.Point(152, 202);
+            this.boutme.Name = "boutme";
+            this.boutme.Size = new System.Drawing.Size(79, 17);
+            this.boutme.TabIndex = 14;
+            this.boutme.Text = "about me...";
+            // 
+            // interest
+            // 
+            this.interest.AutoSize = true;
+            this.interest.Location = new System.Drawing.Point(155, 292);
+            this.interest.Name = "interest";
+            this.interest.Size = new System.Drawing.Size(55, 17);
+            this.interest.TabIndex = 15;
+            this.interest.Text = "interest";
+            // 
+            // home
+            // 
+            this.home.Location = new System.Drawing.Point(202, 415);
+            this.home.Name = "home";
+            this.home.Size = new System.Drawing.Size(109, 23);
+            this.home.TabIndex = 16;
+            this.home.Text = "home";
+            this.home.UseVisualStyleBackColor = true;
+            this.home.Click += new System.EventHandler(this.home_Click);
             // 
             // profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(411, 491);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.home);
+            this.Controls.Add(this.interest);
+            this.Controls.Add(this.boutme);
+            this.Controls.Add(this.city);
+            this.Controls.Add(this.edit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.intent);
+            this.Controls.Add(this.age);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -181,12 +228,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label name;
+        private System.Windows.Forms.Label age;
+        private System.Windows.Forms.Label intent;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button edit;
+        private System.Windows.Forms.Label city;
+        private System.Windows.Forms.Label boutme;
+        private System.Windows.Forms.Label interest;
+        private System.Windows.Forms.Button home;
     }
 }

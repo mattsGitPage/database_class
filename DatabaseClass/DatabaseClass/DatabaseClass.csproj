@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="editProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editProfileForm.Designer.cs">
+      <DependentUpon>editProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="HomePage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,12 +83,6 @@
     <Compile Include="profile.Designer.cs">
       <DependentUpon>profile.cs</DependentUpon>
     </Compile>
-    <Compile Include="upgrade.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="upgrade.Designer.cs">
-      <DependentUpon>upgrade.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewUsers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +103,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="editProfileForm.resx">
+      <DependentUpon>editProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="profile.resx">
       <DependentUpon>profile.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="upgrade.resx">
-      <DependentUpon>upgrade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>

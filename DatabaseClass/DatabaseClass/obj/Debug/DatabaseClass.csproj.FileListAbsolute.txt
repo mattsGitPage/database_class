@@ -11,7 +11,9 @@ C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\Dat
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.HomePage.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.profile.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.LoginPage.resources
-C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.MessageUser.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.ViewUsers.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.matches.resources
-C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.upgrade.resources
+C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.dll
+C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.xml
+C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.Likes.resources
+C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.editProfileForm.resources

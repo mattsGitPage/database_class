@@ -1,6 +1,6 @@
 ﻿namespace DatabaseClass
 {
-    partial class Likes
+    partial class assignment_2
     {
         /// <summary>
         /// Required designer variable.
@@ -28,18 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // Likes
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 253);
-            this.Location = new System.Drawing.Point(134, 86);
-            this.Name = "Likes";
-            this.Text = "My Likes";
-            this.ResumeLayout(false);
-
+            this.Text = "assignment_2";
         }
 
         #endregion

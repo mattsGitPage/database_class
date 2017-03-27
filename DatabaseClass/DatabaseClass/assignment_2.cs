@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DatabaseClass
 {
-    public partial class Likes : Form
+    public partial class assignment_2 : Form
     {
-        public Likes()
+        public assignment_2()
         {
             InitializeComponent();
         }

@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace DatabaseClass
 {
     public partial class LoginPage : Form
     {
+        //local user information
+        Global global_reference = Global.getInstance();
         public LoginPage()
         {
             InitializeComponent();
@@ -26,42 +29,45 @@ namespace DatabaseClass
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //get hash of password
-            HashAlgorithm sha = new SHA1CryptoServiceProvider();
+            //get password
             string pass1 = pass.Text.ToString();
-            byte[] password = Encoding.ASCII.GetBytes(pass1);
-            byte[] hashPass = sha.ComputeHash(password);
-            string password_entered = String.Empty;
-            byte[] password_entered_bytes = null;
+            string email = user_name.Text.ToString();
+            string stored_pass = String.Empty;
+            int user_id;
+            
 
-            //compare with hash in database
-            //TODO issues with password hashing
-            string query = "select user_password from user_create_profile where user_name = @user_name";
-            using (SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MKRJETA;Initial Catalog=date_app;Integrated Security=True"))
+            //compare with pass in database
+            string query = "select password , global_credentials_id from credentials where email = @email";
+            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
             {
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
                     //get the user name to compare password
-                    string user = user_name.Text.ToString();
-                    cmd.Parameters.AddWithValue("@user_name", user);
-                    SqlDataReader read = cmd.ExecuteReader();
+                    cmd.Parameters.AddWithValue("@email", email);
+                    MySqlDataReader read = cmd.ExecuteReader();
 
                     //check values in row
                     
                         read.Read();
-                        password_entered_bytes = (byte[])read.GetValue(0);
+                        stored_pass = (String)read.GetValue(0);
+                        user_id = (int)read.GetValue(1);
                        
                    
-                    var compare_passwords = hashPass.SequenceEqual(password_entered_bytes);
-                    if(compare_passwords)
+                    //compare passwords
+                    if(stored_pass == pass1)
                     {
-                        //TODO set up user account page 
+                        //TODO redirect to user profile page
+                        global_reference.set_user_id(user_id);
                         MessageBox.Show("successfully logged in");
+                        this.Hide();
+                        profile p = new profile();
+                        p.Show();
+                        this.Close();
                     }
                     else
                     {
-                        MessageBox.Show("invalid password");
+                        MessageBox.Show("invalid password or email");
                     }
                 }
             }
