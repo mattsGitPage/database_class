@@ -13,26 +13,25 @@ namespace DatabaseClass
         {
             InitializeComponent();
             int user_id = global_reference.get_user_id();
-            int[] intersted_in = new int[1000] ;
-            int i = 0;
-            int j = 0;
+            int interested_user = 0;
+            int interested_in = 0;
+            //Stores all the users information for contact
+            string[] contactInfo = null;
+            string phone_number = String.Empty;
+
 
             /**
              * 
              *     THIS IS THE CORRECT QUERY TO GET RESULTS FOR THIS SECTION NEED TO IMPLEMENT IT THOUGH
              *     
-                    select * 
-                    from datapptho.match_list
-                    where glob_id = 1  // THIS IS THE VALUE PASSED BY THE GLOBAL
+                    select * from datapptho.match_list where glob_id = @glob_id
                             and interested_in_id in (select M.glob_id
 							                           from datapptho.match_list M
 							                            where glob_id = M.glob_id
-                                                           and interested_in_id = 1) // THIS NEEDS TO BE THE VALUE PASSED BY GLOBAL
-
-             * 
-             * 
+                                                           and interested_in_id = @glob_id) // THIS NEEDS TO BE THE VALUE PASSED BY GLOBAL
+             
              */
-            string query = "select interested_in_id from match_list where glob_id = @glob_id";
+            string query = "select * from datapptho.match_list where glob_id = @glob_id and interested_in_id in (select M.glob_id from datapptho.match_list M where glob_id = M.glob_id and interested_in_id = @glob_id) ";
             using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -41,41 +40,33 @@ namespace DatabaseClass
                     cmd.Parameters.AddWithValue("@glob_id", global_reference.get_user_id());
                     MySqlDataReader read = cmd.ExecuteReader();
 
-                    //add all the signed in users likes
-                    while(read.Read())
+                    while (read.Read())
                     {
                         read.Read();
-                        intersted_in[i] = (int)read.GetValue(1);
-                        i++;
+                        interested_user = (int)read.GetValue(1);
+                        interested_in = (int)read.GetValue(1);
+                        //add the other user that shares interest the unique tag
+                        contactInfo[0] = interested_in.ToString();
+
+
                     }
+
 
                 }
-            }
-
-
-            //iterate through all the users likes and see if they like user as well
-            
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
-            {
-                while (j <= i)
+                string query1 = " select phone_number from contact_info where globe_id = @gid ";
+                using (MySqlCommand cmd = new MySqlCommand(query1, con))
                 {
-                    string query2 = "select interested_in_id from match_list where glob_id = @glob_id";
-                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@gid", interested_in.ToString());
+                    MySqlDataReader read = cmd.ExecuteReader();
+
+                    while (read.Read())
                     {
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@glob_id", global_reference.get_user_id());
-                        MySqlDataReader read = cmd.ExecuteReader();
-
-                        //add all the signed in users likes
-                        while (read.Read())
-                        {
-                            read.Read();
-                            intersted_in[i] = (int)read.GetValue(1);
-                            i++;
-                        }
-                        j++;
-
+                        read.Read();
+                        phone_number = (string)read.GetValue(0);
+                        contactInfo[1] = phone_number;
                     }
+
                 }
             }
 

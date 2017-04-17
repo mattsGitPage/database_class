@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+using System;
 
 namespace DatabaseClass
 {
@@ -20,7 +22,7 @@ namespace DatabaseClass
         //variables a user will need
         private static int user_id;
 
-        private string password;
+        private List<String[]> contacts = null;
 
         public static Global getInstance()
         {
@@ -36,8 +38,8 @@ namespace DatabaseClass
         public int get_user_id() { return user_id; }
         public void set_user_id(int id) { user_id = id; }
 
-        public void set_user_password(string pass) { password = pass; }
-        public string get_user_password() { return password; }
+        public List<String[]> getInfo() { return contacts; }
+        public void setInfo(String[] s) { contacts.Add(s);}
 
 
     }
