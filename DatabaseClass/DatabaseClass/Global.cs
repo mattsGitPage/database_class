@@ -23,6 +23,7 @@ namespace DatabaseClass
         private static int user_id;
 
         private List<String[]> contacts = null;
+		private String SQLServerAuthentication = "server=localhost; database=datapptho; user=group1; password=Password1";
 
         public static Global getInstance()
         {
@@ -41,6 +42,6 @@ namespace DatabaseClass
         public List<String[]> getInfo() { return contacts; }
         public void setInfo(String[] s) { contacts.Add(s);}
 
-
+		public String get_sql_auth() { return SQLServerAuthentication; }
     }
 }
