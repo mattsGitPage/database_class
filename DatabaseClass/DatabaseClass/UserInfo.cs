@@ -76,6 +76,12 @@ namespace DatabaseClass
             string gender = this.gender.Text.ToString();
             string city = this.city.Text.ToString();
             string aboutMe = about.Text.ToString();
+            string pass = password.Text.ToString();
+            string email = this.email.Text.ToString();
+            string interest = this.interests.Text.ToString();
+            string intent = this.intent.Text.ToString();
+            string phone = this.phone.Text.ToString();
+            
 
             /*
              * since we have a dependency on global id we need to insert a corresponding dating_users entity into the date_user table
@@ -84,20 +90,21 @@ namespace DatabaseClass
             {
                 //TODO: generate new icon for browse section of user
                 //add created profile
-                string query = "insert into dating_users (user_name) values (@user_name)";
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
+               
+                    string query0 = "insert into dating_users (user_name) values (@user_name)";
+                using (MySqlCommand cmd = new MySqlCommand(query0, con))
                 {
                     con.Open();
-                    cmd.Parameters.AddWithValue("@user_name", "practice"); 
+                    cmd.Parameters.AddWithValue("@user_name", firstName);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                }
+                }   
             }
 
             //open sql connection
             using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
                 {
-                    //TODO: generate new icon for browse section of user
+                  //TODO: generate new icon for browse section of user
                     //add created profile
                     string query = "insert into profile ( first_name, last_name, gender, about_me, dob, age, city) values (@first_name , @last_name, @gender, @about_me,  @dob, @age , @city)";
                     using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -113,17 +120,77 @@ namespace DatabaseClass
                         cmd.ExecuteNonQuery();
                         con.Close();
                     }
+
+
+    //adds password and email to the credential table
+              string query1 = "insert into credentials ( email, username,  password ,hint) values (@email, @username, @password , @hint)";
+                using (MySqlCommand cmd = new MySqlCommand(query1, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@username", firstName);
+                    cmd.Parameters.AddWithValue("@password", pass);
+                    cmd.Parameters.AddWithValue("@hint", "contact an admin");
+                    cmd.ExecuteNonQuery();
+                    con.Close();
                 }
 
-                //open next page
+                string query2 = "insert into objective ( intent) values (@intent)";
+                using (MySqlCommand cmd = new MySqlCommand(query2, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@intent", intent);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+
+                string query3 = "insert into interests ( interest) values (@interest)";
+                using (MySqlCommand cmd = new MySqlCommand(query3, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@interest", interest);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+
+                string query4 = "insert into contact_info (phone_number, first_name, last_name) values (@phone, @first, @last)";
+                using (MySqlCommand cmd = new MySqlCommand(query4, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    cmd.Parameters.AddWithValue("@first", firstName);
+                    cmd.Parameters.AddWithValue("@last", lastName);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+
+
+            MessageBox.Show("successfully created your profile. Please log in to access your account.");
+            //open next page
                   this.Hide();
-                  HomePage page = new HomePage();
+                  LoginPage page = new LoginPage();
                   page.Show();
-            this.Close();
+                  this.Close();
             
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UserInfo_Load(object sender, EventArgs e)
         {
 
         }

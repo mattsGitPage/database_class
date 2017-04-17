@@ -17,6 +17,21 @@ namespace DatabaseClass
             int i = 0;
             int j = 0;
 
+            /**
+             * 
+             *     THIS IS THE CORRECT QUERY TO GET RESULTS FOR THIS SECTION NEED TO IMPLEMENT IT THOUGH
+             *     
+                    select * 
+                    from datapptho.match_list
+                    where glob_id = 1  // THIS IS THE VALUE PASSED BY THE GLOBAL
+                            and interested_in_id in (select M.glob_id
+							                           from datapptho.match_list M
+							                            where glob_id = M.glob_id
+                                                           and interested_in_id = 1) // THIS NEEDS TO BE THE VALUE PASSED BY GLOBAL
+
+             * 
+             * 
+             */
             string query = "select interested_in_id from match_list where glob_id = @glob_id";
             using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
             {

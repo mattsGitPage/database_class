@@ -42,6 +42,7 @@ namespace DatabaseClass
                     cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
                     MySqlDataReader read =  cmd.ExecuteReader();
 
+                   
                     //asign values
                     if (read.Read())
                     {

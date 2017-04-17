@@ -20,6 +20,8 @@ namespace DatabaseClass
         //variables a user will need
         private static int user_id;
 
+        private string password;
+
         public static Global getInstance()
         {
             if (singleInstance == null)
@@ -33,6 +35,9 @@ namespace DatabaseClass
         //getters and setter
         public int get_user_id() { return user_id; }
         public void set_user_id(int id) { user_id = id; }
+
+        public void set_user_password(string pass) { password = pass; }
+        public string get_user_password() { return password; }
 
 
     }

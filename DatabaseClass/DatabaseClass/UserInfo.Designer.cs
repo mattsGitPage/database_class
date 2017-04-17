@@ -44,11 +44,22 @@
             this.last_name = new System.Windows.Forms.TextBox();
             this.aboutMe = new System.Windows.Forms.Label();
             this.about = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.password = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.email = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.intent = new System.Windows.Forms.TextBox();
+            this.interests = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.phone = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(485, 451);
+            this.button1.Location = new System.Drawing.Point(485, 576);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -59,7 +70,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 84);
+            this.label1.Location = new System.Drawing.Point(43, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 17);
             this.label1.TabIndex = 1;
@@ -69,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 199);
+            this.label2.Location = new System.Drawing.Point(42, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 17);
             this.label2.TabIndex = 2;
@@ -78,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 237);
+            this.label3.Location = new System.Drawing.Point(42, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 17);
             this.label3.TabIndex = 3;
@@ -104,21 +115,21 @@
             // 
             // first_name
             // 
-            this.first_name.Location = new System.Drawing.Point(204, 78);
+            this.first_name.Location = new System.Drawing.Point(204, 58);
             this.first_name.Name = "first_name";
             this.first_name.Size = new System.Drawing.Size(160, 22);
             this.first_name.TabIndex = 6;
             // 
             // userAge
             // 
-            this.userAge.Location = new System.Drawing.Point(204, 194);
+            this.userAge.Location = new System.Drawing.Point(203, 169);
             this.userAge.Name = "userAge";
             this.userAge.Size = new System.Drawing.Size(160, 22);
             this.userAge.TabIndex = 7;
             // 
             // city
             // 
-            this.city.Location = new System.Drawing.Point(204, 232);
+            this.city.Location = new System.Drawing.Point(203, 207);
             this.city.Name = "city";
             this.city.Size = new System.Drawing.Size(160, 22);
             this.city.TabIndex = 8;
@@ -136,7 +147,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(43, 115);
+            this.label6.Location = new System.Drawing.Point(43, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 17);
             this.label6.TabIndex = 10;
@@ -145,7 +156,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(43, 154);
+            this.label7.Location = new System.Drawing.Point(43, 131);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 17);
             this.label7.TabIndex = 11;
@@ -153,14 +164,14 @@
             // 
             // gender
             // 
-            this.gender.Location = new System.Drawing.Point(204, 151);
+            this.gender.Location = new System.Drawing.Point(204, 131);
             this.gender.Name = "gender";
             this.gender.Size = new System.Drawing.Size(160, 22);
             this.gender.TabIndex = 12;
             // 
             // last_name
             // 
-            this.last_name.Location = new System.Drawing.Point(204, 115);
+            this.last_name.Location = new System.Drawing.Point(204, 95);
             this.last_name.Name = "last_name";
             this.last_name.Size = new System.Drawing.Size(160, 22);
             this.last_name.TabIndex = 13;
@@ -168,7 +179,7 @@
             // aboutMe
             // 
             this.aboutMe.AutoSize = true;
-            this.aboutMe.Location = new System.Drawing.Point(46, 319);
+            this.aboutMe.Location = new System.Drawing.Point(46, 501);
             this.aboutMe.Name = "aboutMe";
             this.aboutMe.Size = new System.Drawing.Size(68, 17);
             this.aboutMe.TabIndex = 14;
@@ -176,7 +187,7 @@
             // 
             // about
             // 
-            this.about.Location = new System.Drawing.Point(204, 319);
+            this.about.Location = new System.Drawing.Point(204, 501);
             this.about.Multiline = true;
             this.about.Name = "about";
             this.about.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -184,11 +195,115 @@
             this.about.TabIndex = 15;
             this.about.Text = "enter information about you...";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(43, 341);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 17);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Password";
+            // 
+            // password
+            // 
+            this.password.Location = new System.Drawing.Point(203, 336);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(160, 22);
+            this.password.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(44, 300);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "email";
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(203, 300);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(160, 22);
+            this.email.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(44, 241);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 17);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "intent";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // intent
+            // 
+            this.intent.Location = new System.Drawing.Point(203, 241);
+            this.intent.Name = "intent";
+            this.intent.Size = new System.Drawing.Size(160, 22);
+            this.intent.TabIndex = 21;
+            // 
+            // interests
+            // 
+            this.interests.Location = new System.Drawing.Point(204, 422);
+            this.interests.Multiline = true;
+            this.interests.Name = "interests";
+            this.interests.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.interests.Size = new System.Drawing.Size(261, 69);
+            this.interests.TabIndex = 22;
+            this.interests.Text = "enter information about you...";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(43, 425);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(0, 17);
+            this.label11.TabIndex = 23;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(45, 425);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 17);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "interests";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(46, 379);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 17);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "phone number";
+            // 
+            // phone
+            // 
+            this.phone.Location = new System.Drawing.Point(203, 374);
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(160, 22);
+            this.phone.TabIndex = 26;
+            // 
             // UserInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(572, 553);
+            this.ClientSize = new System.Drawing.Size(572, 624);
+            this.Controls.Add(this.phone);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.interests);
+            this.Controls.Add(this.intent);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.password);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.about);
             this.Controls.Add(this.aboutMe);
             this.Controls.Add(this.last_name);
@@ -207,6 +322,7 @@
             this.Controls.Add(this.button1);
             this.Name = "UserInfo";
             this.Text = "Create Profile";
+            this.Load += new System.EventHandler(this.UserInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,5 +346,16 @@
         private System.Windows.Forms.TextBox last_name;
         private System.Windows.Forms.Label aboutMe;
         private System.Windows.Forms.TextBox about;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox password;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox intent;
+        private System.Windows.Forms.TextBox interests;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox phone;
     }
 }
