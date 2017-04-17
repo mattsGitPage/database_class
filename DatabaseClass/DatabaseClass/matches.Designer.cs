@@ -33,28 +33,27 @@
             // 
             // listView1
             // 
-            this.listView1.Location = new System.Drawing.Point(-1, 1);
+            this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(434, 427);
+            this.listView1.Size = new System.Drawing.Size(461, 326);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // matches
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 427);
+            this.ClientSize = new System.Drawing.Size(485, 350);
             this.Controls.Add(this.listView1);
-            this.Location = new System.Drawing.Point(134, 86);
             this.Name = "matches";
-            this.Text = "matches";
+            this.Text = "Matches";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn common_intereset;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
         private System.Windows.Forms.ListView listView1;
     }
 }
