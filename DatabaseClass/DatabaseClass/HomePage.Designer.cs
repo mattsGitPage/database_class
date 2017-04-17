@@ -146,9 +146,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(192, 173);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 17);
+            this.label6.Size = new System.Drawing.Size(39, 17);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Upgrade";
+            this.label6.Text = "Filter";
             // 
             // HomePage
             // 

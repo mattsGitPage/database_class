@@ -21,6 +21,28 @@ namespace DatabaseClass
 
         //variables a user will need
         private static int user_id;
+        private static string gender;
+        private static int min_age;
+
+        public void setGender(String s) { gender = s;}
+        public string getGender() { return gender; }
+        public int getMinAge() { return min_age; }
+        public void setMinAge(int s) { min_age = s; }
+        public int getMaxAge() { return max_age; }
+        public void setMaxAge(int s) { max_age = s; }
+        public string getlocation() { return location; }
+        public void setLocation(string s) { location = s; }
+        public int getMaleType() { return male_gender; }
+
+        public int getFemaleType() { return female_gender; }
+        public string getIntent() { return intent; }
+        public void setIntent(string s) { intent = s; }
+
+        private static int max_age;
+        private static string location;
+        private static int male_gender;
+        private static int female_gender;
+        private static string intent;
 
         private List<String[]> contacts = null;
 
@@ -40,7 +62,6 @@ namespace DatabaseClass
 
         public List<String[]> getInfo() { return contacts; }
         public void setInfo(String[] s) { contacts.Add(s);}
-
 
     }
 }
