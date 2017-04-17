@@ -54,7 +54,7 @@ namespace DatabaseClass
          */
         MySqlDataReader read = null;
             string query = "select * from datapptho.match_list where glob_id = @glob_id and interested_in_id in (select M.glob_id from datapptho.match_list M where glob_id = M.glob_id and interested_in_id = @glob_id) ";
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+			using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
