@@ -23,7 +23,7 @@ namespace DatabaseClass
         private static int user_id;
 
         private List<String[]> contacts = null;
-		private String SQLServerAuthentication = "server=localhost; database=datapptho; user=group1; password=Password1";
+		private String SQLServerAuthentication = "server=localhost; database=datapptho; user=root; password=mysql9001";
 
         public static Global getInstance()
         {

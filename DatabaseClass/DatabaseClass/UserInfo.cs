@@ -46,6 +46,7 @@ namespace DatabaseClass
                             //TODO save to database
                             var image = Bitmap.FromStream(myStream);
 
+							Global global_reference = Global.getInstance();
 							using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
                             {
                                 string query = "insert into profile (picture) values (@picture)";
@@ -86,6 +87,7 @@ namespace DatabaseClass
             /*
              * since we have a dependency on global id we need to insert a corresponding dating_users entity into the date_user table
              */
+			Global global_reference = Global.getInstance();
 			using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 //TODO: generate new icon for browse section of user

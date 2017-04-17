@@ -38,6 +38,8 @@ namespace DatabaseClass
 
             //compare with pass in database
             string query = "select password , global_credentials_id from credentials where email = @email";
+			//global user access
+			Global global_reference = Global.getInstance();
 			using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
