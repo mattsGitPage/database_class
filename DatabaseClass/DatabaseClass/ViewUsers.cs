@@ -63,12 +63,8 @@ namespace DatabaseClass
             //this.interest.Text = interest;
             //this.intent.Text = intent;
             //TODO: add picture... box already on profile
-            global_reference.setFirstName(first_name);
-            global_reference.setAge(agee.ToString());
-            global_reference.setCity(city);
-            global_reference.setAboutMe(aboutMe);
-            global_reference.setInterest(interest);
-            global_reference.setIntentBrowse(intent);
+            global_reference.setFlag(true);
+            global_reference.set_browse_id(22);
 
             new profile().Show(); 
 
@@ -568,6 +564,11 @@ namespace DatabaseClass
             //this.interest.Text = interest;
             //this.intent.Text = intent;
             //TODO: add picture... box already on profile
+        }
+
+        private void ViewUsers_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

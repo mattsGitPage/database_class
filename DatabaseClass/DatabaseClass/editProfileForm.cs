@@ -29,7 +29,8 @@ namespace DatabaseClass
             string intent = this.tent.Text.ToString();
 
             //connect to mysql and update the information
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
 
                 //queries to update the profile
