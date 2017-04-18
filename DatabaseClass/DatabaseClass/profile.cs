@@ -43,12 +43,14 @@ namespace DatabaseClass
 
                     if (global_reference.getFlag())
                     {
+                        //the user is browsing someone elses profile not their own
                         cmd.Parameters.AddWithValue("@global_id", global_reference.get_browse_id());
                         global_reference.setFlag(false);
                         this.edit.Visible = false; 
                     }
                     else
                     {
+                        //the user is viewing their own profile
                         cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
                         this.edit.Visible = true;
                     }
