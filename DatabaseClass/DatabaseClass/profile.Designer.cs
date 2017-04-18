@@ -39,7 +39,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.edit = new System.Windows.Forms.Button();
             this.city = new System.Windows.Forms.Label();
             this.boutme = new System.Windows.Forms.Label();
             this.interest = new System.Windows.Forms.Label();
@@ -145,16 +144,6 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "Interests";
             // 
-            // edit
-            // 
-            this.edit.Location = new System.Drawing.Point(31, 415);
-            this.edit.Name = "edit";
-            this.edit.Size = new System.Drawing.Size(118, 23);
-            this.edit.TabIndex = 12;
-            this.edit.Text = "edit profile";
-            this.edit.UseVisualStyleBackColor = true;
-            this.edit.Click += new System.EventHandler(this.edit_Click);
-            // 
             // city
             // 
             this.city.AutoSize = true;
@@ -201,7 +190,6 @@
             this.Controls.Add(this.interest);
             this.Controls.Add(this.boutme);
             this.Controls.Add(this.city);
-            this.Controls.Add(this.edit);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -234,7 +222,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Label city;
         private System.Windows.Forms.Label boutme;
         private System.Windows.Forms.Label interest;

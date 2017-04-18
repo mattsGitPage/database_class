@@ -28,24 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listView1
+            // label1
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 12);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(461, 326);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "name: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(59, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "default";
             // 
             // matches
             // 
             this.ClientSize = new System.Drawing.Size(485, 350);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Name = "matches";
             this.Text = "Matches";
+            this.Load += new System.EventHandler(this.matches_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -54,6 +68,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn common_intereset;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone_number;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

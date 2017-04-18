@@ -21,8 +21,14 @@ namespace DatabaseClass
 
         //variables a user will need
         private static int user_id;
-        private static string gender;
+        private static string gender = String.Empty;
         private static int min_age;
+        private static int Other_user_id;
+        private static int counter;
+        public void setCounter(int s) { counter = s; }
+        public int getCounter() { return counter; }
+        public void setOtheruserId(int s) { Other_user_id = s; }
+        public int getOtherUser() { return Other_user_id; }
 
         public void setGender(String s) { gender = s;}
         public string getGender() { return gender; }
@@ -43,7 +49,9 @@ namespace DatabaseClass
         private static int male_gender;
         private static int female_gender;
         private static string intent;
-
+        private static bool fiter_selected;
+         public bool getFilter() { return fiter_selected; }
+        public void setFilter(bool s) { fiter_selected = s; }
         private List<String[]> contacts = null;
 
         public static Global getInstance()

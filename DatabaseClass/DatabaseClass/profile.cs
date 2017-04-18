@@ -77,13 +77,6 @@ namespace DatabaseClass
 
         }
 
-        private void edit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            editProfileForm p = new editProfileForm();
-            p.Show();
-            this.Close();
-        }
 
         private void home_Click(object sender, EventArgs e)
         {

@@ -26,16 +26,24 @@ namespace DatabaseClass
         private void submit_Click(object sender, EventArgs e)
         {
            int id =  G.get_user_id();
-           
-              G.setMinAge(Convert.ToInt32((minage.Text.ToString())));
-              G.setMaxAge(Convert.ToInt32(maxage.Text.ToString()));
-            G.setLocation(location.Text.ToString());
-            G.setIntent(intenttt.Text.ToString());
-            if (maleb.Checked)
-                G.setGender("male");
-            else if (femaleb.Checked)
-                G.setGender("female");
-                
+
+            if (minage.Text != null && maxage.Text != null && location.Text != null && intenttt.Text != null && (maleb.Checked || femaleb.Checked))
+            {
+                G.setMinAge(Convert.ToInt32((minage.Text.ToString())));
+                G.setMaxAge(Convert.ToInt32(maxage.Text.ToString()));
+                G.setLocation(location.Text.ToString());
+                G.setIntent(intenttt.Text.ToString());
+                if (maleb.Checked)
+                    G.setGender("male");
+                else if (femaleb.Checked)
+                    G.setGender("female");
+
+                G.setFilter(true);
+            }
+            else
+            {
+                MessageBox.Show("you need to fill everything out");
+            }
 
         }
     }

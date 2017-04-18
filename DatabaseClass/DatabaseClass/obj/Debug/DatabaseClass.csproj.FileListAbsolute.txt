@@ -16,5 +16,4 @@ C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\Dat
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.dll
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.xml
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.Likes.resources
-C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.editProfileForm.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.FilterForm.resources

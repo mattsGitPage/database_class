@@ -19,64 +19,210 @@ namespace DatabaseClass
         }
 
 
-        Global g = Global.getInstance();
+        Global global_reference = Global.getInstance();
         private void button1_Click_1(object sender, EventArgs e)
         {
-         /*
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            //if user set a filter use this
+            if (global_reference.getFilter())
             {
-
-                 string min_age = Convert.ToString(g.getMinAge());
-                string max_age = Convert.ToString(g.getMaxAge());
-                string intent = g.getIntent();
-                string gen = g.getGender();
-
-                string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id and age >" + min_age+  " and age < " +max_age; //just add all the stuff to this query
-
-                //TODO: qeury the users interests and find the ones the guy wants
-
-                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                //global_reference.ClearList();
+                using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
                 {
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@global_id", 2); // this should change
-                    MySqlDataReader read = cmd.ExecuteReader();
-
-
-                    //asign values
-                    if (read.Read())
+                    string query = "select global_id from profile P, objective O,  where global_id = O.g_id and city like \"% " + global_reference.getlocation() + "%\"" + " and age >= " + global_reference.getMinAge() + " age <= " + global_reference.getMaxAge() + "and intent  like \"% " + global_reference.getIntent() + "%\"" + " and gender = " + global_reference.getGender();
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
                     {
-                        first_name = (String)read.GetValue(0);
-                        agee = (Int32)read.GetValue(1);
-                        aboutMe = (String)read.GetValue(2);
-                        city = (String)read.GetValue(3);
-                        intent = (String)read.GetValue(4);
-                        interest = (String)read.GetValue(5);
-                    }
+                        con.Open();
+                        // a new query needs to be ran to get this id 
 
-                    con.Close();
+                        MySqlDataReader read = cmd.ExecuteReader();
+                        //asign values
+                        if (read.Read())
+                        {
+
+                            global_reference.set_user_id((Int32)read.GetValue(0));
+                           
+                        }
+                        con.Close();
+                    }
                 }
             }
-            //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+            else
+            {
 
-            this.Hide();
-            profile p = new profile();
-            p.Show();
-            this.Close(); */
+                using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+                {
+                    
+
+                    string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id "; 
+
+                    //TODO: qeury the users interests and find the ones the guy wants
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@global_id", global_reference.getCounter()); // this should change
+                        //then incrememnt the counter for the next profile
+                        global_reference.setCounter(global_reference.getCounter() + 1);
+                        MySqlDataReader read = cmd.ExecuteReader();
+
+
+                        //asign values
+                        if (read.Read())
+                        {
+                            global_reference.setOtheruserId((Int32)read.GetValue(0));
+                            
+                        }
+
+                        con.Close();
+                    }
+                }
+           
+
+                this.Hide();
+                profile p = new profile();
+                p.Show();
+                this.Close();
+
+
+
+            }
         }
 
-      
+        private void button13_Click(object sender, EventArgs e)
+        {
+            //if user set a filter use this
+            if (global_reference.getFilter())
+            {
+                //global_reference.ClearList();
+                using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+                {
+                    string query = "select global_id from profile P, objective O,  where global_id = O.g_id and city like \"% " + global_reference.getlocation() + "%\"" + " and age >= " + global_reference.getMinAge() + " age <= " + global_reference.getMaxAge() + "and intent  like \"% " + global_reference.getIntent() + "%\"" + " and gender = " + global_reference.getGender();
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        con.Open();
+                        // a new query needs to be ran to get this id 
 
-     
-    
-    
-    
+                        MySqlDataReader read = cmd.ExecuteReader();
+                        //asign values
+                        if (read.Read())
+                        {
+
+                            global_reference.set_user_id((Int32)read.GetValue(0));
+
+                        }
+                        con.Close();
+                    }
+                }
+            }
+            else
+            {
+
+                using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+                {
+
+
+                    string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id ";
+
+                    //TODO: qeury the users interests and find the ones the guy wants
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@global_id", global_reference.getCounter()); // this should change
+                        //then incrememnt the counter for the next profile
+                        global_reference.setCounter(global_reference.getCounter() + 1);
+                        MySqlDataReader read = cmd.ExecuteReader();
+
+
+                        //asign values
+                        if (read.Read())
+                        {
+                            global_reference.setOtheruserId((Int32)read.GetValue(0));
+
+                        }
+
+                        con.Close();
+                    }
+                }
+
+
+                this.Hide();
+                profile p = new profile();
+                p.Show();
+                this.Close();
+
+
+
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            //if user set a filter use this
+            if (global_reference.getFilter())
+            {
+                //global_reference.ClearList();
+                using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+                {
+                    string query = "select global_id from profile P, objective O,  where global_id = O.g_id and city like \"% " + global_reference.getlocation() + "%\"" + " and age >= " + global_reference.getMinAge() + " age <= " + global_reference.getMaxAge() + "and intent  like \"% " + global_reference.getIntent() + "%\"" + " and gender = " + global_reference.getGender();
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        con.Open();
+                        // a new query needs to be ran to get this id 
+
+                        MySqlDataReader read = cmd.ExecuteReader();
+                        //asign values
+                       
+                        while (read.Read()  )
+                        {
+                            global_reference.set_user_id((Int32)read.GetValue(0));
+                            
+                        }
+                        con.Close();
+                    }
+                }
+            }
+            else
+            {
+
+                using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+                {
+
+
+                    string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id ";
+
+                    //TODO: qeury the users interests and find the ones the guy wants
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, con))
+                    {
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@global_id", global_reference.getCounter()); // this should change
+                        //then incrememnt the counter for the next profile
+                        global_reference.setCounter(global_reference.getCounter() + 1);
+                        MySqlDataReader read = cmd.ExecuteReader();
+
+
+                        //asign values
+                        if (read.Read())
+                        {
+                            global_reference.setOtheruserId((Int32)read.GetValue(0));
+
+                        }
+
+                        con.Close();
+                    }
+                }
+
+
+                this.Hide();
+                profile p = new profile();
+                p.Show();
+                this.Close();
+
+
+
+            }
+        }
     }
 }
