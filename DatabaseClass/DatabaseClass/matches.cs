@@ -23,7 +23,9 @@ namespace DatabaseClass
             string[] s = new string[1000];
             MySqlDataReader read = null;
             string query = "select first_name from datapptho.profile  ";
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+
+            
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {

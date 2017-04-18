@@ -26,7 +26,7 @@ namespace DatabaseClass
             using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select global_id from profile P, objective O  where global_id = O.g_id and city like \"%" + global_reference.getlocation() + "%\"" + " and age >= " +
-                    global_reference.getMinAge() + " and age <= " + global_reference.getMaxAge() + " and intent  like \"%" + global_reference.getIntent() + "%\"" + " and gender = \"" + global_reference.getGender().ToUpper()[0]+"\"";
+                    global_reference.getMinAge() + " and age <= " + global_reference.getMaxAge() + " and intent  like \"%" + global_reference.getIntent() + "%\"" + " and gender = \"" + global_reference.getGender().ToUpper()[0] + "\"";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
@@ -40,8 +40,8 @@ namespace DatabaseClass
                         global_reference.AddToList((Int32)read.GetValue(0));
 
                         //DEBUG
-                      //  Debug.WriteLine((Int32)read.GetValue(0));
-                       
+                        //  Debug.WriteLine((Int32)read.GetValue(0));
+
                     }
 
                     con.Close();
@@ -65,16 +65,16 @@ namespace DatabaseClass
                 this.button10.Text = temp[9].ToString();
                 this.button11.Text = temp[10].ToString();
                 this.button12.Text = temp[11].ToString();
-              
+
             }
-            catch ( System.Exception e)
+            catch (System.Exception e)
             {
                 Debug.WriteLine(e.ToString());
             }
 
         }
-  
-     
+
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -111,15 +111,15 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            
+
             //spawn the profile window for browsing 
             global_reference.setFlag(true);
-            
+
             global_reference.set_browse_id(int.Parse(button1.Text));
 
             profile p = new profile();
-            p.Show(); 
-            
+            p.Show();
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-           
+
             //spawn the profile window for browsing 
             global_reference.setFlag(true);
 

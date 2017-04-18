@@ -38,7 +38,7 @@ namespace DatabaseClass
                 else if (femaleb.Checked)
                     G.setGender("female");
 
-                G.setFilter(true);
+                G.setFlag(true);
 
                 this.Hide();
                 HomePage h = new HomePage();

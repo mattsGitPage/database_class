@@ -21,16 +21,10 @@ namespace DatabaseClass
 
         //variables a user will need
         private static int user_id;
-        private static string gender = String.Empty;
+        private static string gender;
         private static int min_age;
-        private static int Other_user_id;
-        private static int counter;
-        public void setCounter(int s) { counter = s; }
-        public int getCounter() { return counter; }
-        public void setOtheruserId(int s) { Other_user_id = s; }
-        public int getOtherUser() { return Other_user_id; }
 
-        public void setGender(String s) { gender = s;}
+        public void setGender(String s) { gender = s; }
         public string getGender() { return gender; }
         public int getMinAge() { return min_age; }
         public void setMinAge(int s) { min_age = s; }
@@ -49,10 +43,31 @@ namespace DatabaseClass
         private static int male_gender;
         private static int female_gender;
         private static string intent;
-        private static bool fiter_selected;
-         public bool getFilter() { return fiter_selected; }
-        public void setFilter(bool s) { fiter_selected = s; }
+
         private List<String[]> contacts = null;
+
+
+        //The following data members are for use in the transition from the profile browser to the profile viewer spawned in viewuser.cs
+
+        private static Boolean flag_browse = false;
+        public void setFlag(Boolean s) { flag_browse = s; }
+        public Boolean getFlag() { return flag_browse; }
+
+        private static int browse_id;
+        public int get_browse_id() { return browse_id; }
+        public void set_browse_id(int id) { browse_id = id; }
+
+        private static List<int> ListOfIdsThatCameFromFilter = new List<int>();
+        public List<int> getList() { return ListOfIdsThatCameFromFilter; }
+        public void AddToList(int id) { ListOfIdsThatCameFromFilter.Add(id); }
+        public void ClearList() { ListOfIdsThatCameFromFilter.Clear(); }
+
+
+        //this allows Larry Matt and Gabe to only have to change one line of code to use the dbms on their machines. 
+        //bad design but effective. 
+        private String SQLServerAuthentication = "server=localhost; database=datapptho; user=root; password=mysql9001";
+
+        public string get_sql_auth() { return SQLServerAuthentication; }
 
         public static Global getInstance()
         {
@@ -69,7 +84,7 @@ namespace DatabaseClass
         public void set_user_id(int id) { user_id = id; }
 
         public List<String[]> getInfo() { return contacts; }
-        public void setInfo(String[] s) { contacts.Add(s);}
+        public void setInfo(String[] s) { contacts.Add(s); }
 
     }
 }
