@@ -33,3 +33,8 @@ C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug
 C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.csproj.GenerateResource.Cache
 C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.exe
 C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.pdb
+C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\DatabaseClass.exe.config
+C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\DatabaseClass.exe
+C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\DatabaseClass.pdb
+C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.dll
+C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.xml
