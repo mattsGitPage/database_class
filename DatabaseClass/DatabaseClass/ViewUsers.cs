@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,36 @@ namespace DatabaseClass
         public ViewUsers()
         {
             InitializeComponent();
+
+            //apply the filter and do a query. 
+
+            Global global_reference = Global.getInstance();
+            global_reference.ClearList();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
+            {
+                string query = "select global_id from profile P, objective O,  where global_id = O.g_id and city like \"% " + global_reference.getlocation() + "%\"" + " and age >= " +
+                    global_reference.getMinAge() + " age <= " + global_reference.getMaxAge() + "and intent  like \"% " + global_reference.getIntent() + "%\"" + " and gender = " + global_reference.getGender();
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
+                    MySqlDataReader read = cmd.ExecuteReader();
+
+
+                    //asign values
+                    while (read.Read())
+                    {
+                        global_reference.AddToList((Int32)read.GetValue(0));
+
+                        //DEBUG
+                        Debug.WriteLine((Int32)read.GetValue(0));
+                       
+                    }
+
+                    con.Close();
+                }
+            }
+
         }
   
      
