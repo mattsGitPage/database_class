@@ -48,7 +48,16 @@ namespace DatabaseClass
 
 
         //The following data members are for use in the transition from the profile browser to the profile viewer spawned in viewuser.cs
-       
+
+        private static Boolean flag_browse = false;
+        public void setFlag(Boolean s) { flag_browse = s; }
+        public Boolean getFlag() { return flag_browse; }
+
+        private static int browse_id;
+        public int get_browse_id() { return browse_id; }
+        public void set_browse_id(int id) { browse_id = id; }
+
+
         private static string first_name;
         private static string age;
         private static string city;

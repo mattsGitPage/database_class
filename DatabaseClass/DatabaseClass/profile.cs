@@ -40,7 +40,20 @@ namespace DatabaseClass
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
-                    cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
+
+                    if (global_reference.getFlag())
+                    {
+                        cmd.Parameters.AddWithValue("@global_id", global_reference.get_browse_id());
+                        global_reference.setFlag(false);
+                        this.edit.Visible = false; 
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
+                        this.edit.Visible = true;
+                    }
+                    
+
                     MySqlDataReader read =  cmd.ExecuteReader();
 
                    
