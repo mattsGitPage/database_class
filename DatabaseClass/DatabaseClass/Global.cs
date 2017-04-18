@@ -46,6 +46,8 @@ namespace DatabaseClass
 
         private List<String[]> contacts = null;
 
+        private String SQLServerAuthentication = "server=localhost; database=datapptho; user=root; password=mysql9001";
+
         public static Global getInstance()
         {
             if (singleInstance == null)
@@ -63,5 +65,6 @@ namespace DatabaseClass
         public List<String[]> getInfo() { return contacts; }
         public void setInfo(String[] s) { contacts.Add(s);}
 
+        public String get_sql_auth() { return SQLServerAuthentication; }
     }
 }

@@ -30,7 +30,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -55,12 +56,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -74,7 +75,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -99,12 +101,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -118,7 +120,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -143,12 +146,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -162,7 +165,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -187,12 +191,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -206,12 +210,14 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
+
                     cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
                     MySqlDataReader read = cmd.ExecuteReader();
 
@@ -231,12 +237,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -250,7 +256,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -275,12 +282,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -294,7 +301,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -319,12 +327,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -338,7 +346,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -363,12 +372,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -382,7 +391,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -407,12 +417,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -426,7 +436,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -451,12 +462,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -470,7 +481,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -495,12 +507,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
 
@@ -514,7 +526,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -539,12 +552,12 @@ namespace DatabaseClass
                 }
             }
             //change the values on the profile for user to view
-            name.Text = first_name;
-            this.age.Text = agee.ToString();
-            this.city.Text = city;
-            boutme.Text = aboutMe;
-            this.interest.Text = interest;
-            this.intent.Text = intent;
+            //name.Text = first_name;
+            //this.age.Text = agee.ToString();
+            //this.city.Text = city;
+            //boutme.Text = aboutMe;
+            //this.interest.Text = interest;
+            //this.intent.Text = intent;
             //TODO: add picture... box already on profile
         }
     }
