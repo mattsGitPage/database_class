@@ -56,18 +56,16 @@ namespace DatabaseClass
         //TODO: think of a different button 
         private void upgrade_Click(object sender, EventArgs e)
         {
-          //  this.Hide();
-            //upgrade up = new upgrade();
-            // up.Show();
-            FilterForm fil = new FilterForm();
-            fil.Show();
+            this.Hide();
+            FilterForm f = new FilterForm();
+           f.Show();
+            this.Hide();
         }
 
         private void logout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("exiting from the dating application");
-            //exit
-            this.Close();
+            Application.Exit();
         }
     }
 }

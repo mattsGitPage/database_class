@@ -33,29 +33,13 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            Global global_reference = Global.getInstance();
-            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
+            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
-
-                    if (global_reference.getFlag())
-                    {
-                        //the user is browsing someone elses profile not their own
-                        cmd.Parameters.AddWithValue("@global_id", global_reference.get_browse_id());
-                        global_reference.setFlag(false);
-                        this.edit.Visible = false; 
-                    }
-                    else
-                    {
-                        //the user is viewing their own profile
-                        cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
-                        this.edit.Visible = true;
-                    }
-                    
-
+                    cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
                     MySqlDataReader read =  cmd.ExecuteReader();
 
                    
@@ -93,13 +77,6 @@ namespace DatabaseClass
 
         }
 
-        private void edit_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            editProfileForm p = new editProfileForm();
-            p.Show();
-            this.Close();
-        }
 
         private void home_Click(object sender, EventArgs e)
         {

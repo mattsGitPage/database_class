@@ -38,8 +38,7 @@ namespace DatabaseClass
 
             //compare with pass in database
             string query = "select password , global_credentials_id from credentials where email = @email";
-            Global global_reference = Global.getInstance();
-            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
+            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
             {
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
@@ -58,7 +57,7 @@ namespace DatabaseClass
                     //compare passwords
                     if(stored_pass == pass1 && stored_pass != String.Empty)
                     {
-                        MessageBox.Show("user id {0} " , user_id.ToString());
+                       
                     
                         //TODO redirect to user profile page
                         global_reference.set_user_id(user_id);

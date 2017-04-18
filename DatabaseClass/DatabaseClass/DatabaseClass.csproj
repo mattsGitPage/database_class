@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="editProfileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="editProfileForm.Designer.cs">
-      <DependentUpon>editProfileForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="FilterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,11 +71,11 @@
     <Compile Include="matches.Designer.cs">
       <DependentUpon>matches.cs</DependentUpon>
     </Compile>
-    <Compile Include="MessageUser.cs">
+    <Compile Include="MylikesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MessageUser.Designer.cs">
-      <DependentUpon>MessageUser.cs</DependentUpon>
+    <Compile Include="MylikesForm.Designer.cs">
+      <DependentUpon>MylikesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="profile.cs">
       <SubType>Form</SubType>
@@ -109,9 +103,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="editProfileForm.resx">
-      <DependentUpon>editProfileForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FilterForm.resx">
       <DependentUpon>FilterForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,8 +115,8 @@
     <EmbeddedResource Include="matches.resx">
       <DependentUpon>matches.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MessageUser.resx">
-      <DependentUpon>MessageUser.cs</DependentUpon>
+    <EmbeddedResource Include="MylikesForm.resx">
+      <DependentUpon>MylikesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="profile.resx">
       <DependentUpon>profile.cs</DependentUpon>
