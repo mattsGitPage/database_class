@@ -22,10 +22,11 @@ namespace DatabaseClass
 
             Global global_reference = Global.getInstance();
             global_reference.ClearList();
+            //Debug.WriteLine("DebugFrom ViewUsers: " +global_reference.getIntent());
             using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
-                string query = "select global_id from profile P, objective O,  where global_id = O.g_id and city like \"% " + global_reference.getlocation() + "%\"" + " and age >= " +
-                    global_reference.getMinAge() + " age <= " + global_reference.getMaxAge() + "and intent  like \"% " + global_reference.getIntent() + "%\"" + " and gender = " + global_reference.getGender();
+                string query = "select global_id from profile P, objective O  where global_id = O.g_id and city like \"%" + global_reference.getlocation() + "%\"" + " and age >= " +
+                    global_reference.getMinAge() + " and age <= " + global_reference.getMaxAge() + " and intent  like \"%" + global_reference.getIntent() + "%\"" + " and gender = \"" + global_reference.getGender().ToUpper()[0]+"\"";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
@@ -39,7 +40,7 @@ namespace DatabaseClass
                         global_reference.AddToList((Int32)read.GetValue(0));
 
                         //DEBUG
-                        Debug.WriteLine((Int32)read.GetValue(0));
+                      //  Debug.WriteLine((Int32)read.GetValue(0));
                        
                     }
 

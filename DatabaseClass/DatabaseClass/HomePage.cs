@@ -56,9 +56,11 @@ namespace DatabaseClass
         //TODO: think of a different button 
         private void upgrade_Click(object sender, EventArgs e)
         {
-            this.Hide();
+          //  this.Hide();
             //upgrade up = new upgrade();
-           // up.Show();
+            // up.Show();
+            FilterForm fil = new FilterForm();
+            fil.Show();
         }
 
         private void logout_Click(object sender, EventArgs e)
