@@ -46,6 +46,35 @@ namespace DatabaseClass
 
         private List<String[]> contacts = null;
 
+        //The following data members are for use in the transition from the profile browser to the profile viewer spawned in viewuser.cs
+       
+        private static string first_name;
+        private static string age;
+        private static string city;
+        private static string aboutMe;
+        private static string interest;
+        private static string intent_browse;
+
+        public void setFirstName(String s) { first_name = s; }
+        public string getFirstName() { return first_name; }
+
+        public String getAge() { return age; }
+        public void setAge(String s) { age = s; }
+
+        public String getCity() { return city; }
+        public void setCity(String s) { city = s; }
+
+        public string getAboutMe() { return aboutMe; }
+        public void setAboutMe(string s) { aboutMe = s; }
+        
+        public string getInterest() { return interest; }
+        public void setInterest(string s) { interest = s; }
+
+        public string getIntentBrowse() { return intent_browse; }
+        public void setIntentBrowse(string s) { intent_browse = s; }
+
+        //this allows Larry Matt and Gabe to only have to change one line of code to use the dbms on their machines. 
+        //bad design but effective. 
         private String SQLServerAuthentication = "server=localhost; database=datapptho; user=root; password=mysql9001";
 
         public static Global getInstance()

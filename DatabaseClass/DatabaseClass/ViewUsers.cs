@@ -63,6 +63,15 @@ namespace DatabaseClass
             //this.interest.Text = interest;
             //this.intent.Text = intent;
             //TODO: add picture... box already on profile
+            global_reference.setFirstName(first_name);
+            global_reference.setAge(agee.ToString());
+            global_reference.setCity(city);
+            global_reference.setAboutMe(aboutMe);
+            global_reference.setInterest(interest);
+            global_reference.setIntentBrowse(intent);
+
+            new profile().Show(); 
+
         }
 
         private void button2_Click(object sender, EventArgs e)
