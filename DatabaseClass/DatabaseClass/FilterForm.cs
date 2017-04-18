@@ -39,6 +39,11 @@ namespace DatabaseClass
                     G.setGender("female");
 
                 G.setFilter(true);
+
+                this.Hide();
+                HomePage h = new HomePage();
+                h.Show();
+                this.Close();
             }
             else
             {

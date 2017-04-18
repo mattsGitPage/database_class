@@ -57,15 +57,15 @@ namespace DatabaseClass
         private void upgrade_Click(object sender, EventArgs e)
         {
             this.Hide();
-            //upgrade up = new upgrade();
-           // up.Show();
+            FilterForm f = new FilterForm();
+           f.Show();
+            this.Hide();
         }
 
         private void logout_Click(object sender, EventArgs e)
         {
             MessageBox.Show("exiting from the dating application");
-            //exit
-            this.Close();
+            Application.Exit();
         }
     }
 }

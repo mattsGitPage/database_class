@@ -57,7 +57,7 @@ namespace DatabaseClass
                     //compare passwords
                     if(stored_pass == pass1 && stored_pass != String.Empty)
                     {
-                        MessageBox.Show("user id {0} " , user_id.ToString());
+                       
                     
                         //TODO redirect to user profile page
                         global_reference.set_user_id(user_id);

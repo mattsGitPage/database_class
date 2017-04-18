@@ -59,5 +59,13 @@ namespace DatabaseClass
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomePage h = new HomePage();
+            h.Show();
+            this.Close();
+        }
     }
 }

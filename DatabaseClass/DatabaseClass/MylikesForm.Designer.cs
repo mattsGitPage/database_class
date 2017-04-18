@@ -32,6 +32,7 @@
             this.name = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.num = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -71,11 +72,22 @@
             this.num.TabIndex = 3;
             this.num.Text = "number";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(445, 275);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Likes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 340);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.num);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.name);
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label num;
+        private System.Windows.Forms.Button button1;
     }
 }
