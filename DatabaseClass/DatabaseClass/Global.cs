@@ -46,6 +46,7 @@ namespace DatabaseClass
 
         private List<String[]> contacts = null;
 
+
         //The following data members are for use in the transition from the profile browser to the profile viewer spawned in viewuser.cs
        
         private static string first_name;
@@ -77,6 +78,8 @@ namespace DatabaseClass
         //bad design but effective. 
         private String SQLServerAuthentication = "server=localhost; database=datapptho; user=root; password=mysql9001";
 
+        public string get_sql_auth() { return SQLServerAuthentication; }
+
         public static Global getInstance()
         {
             if (singleInstance == null)
@@ -94,6 +97,5 @@ namespace DatabaseClass
         public List<String[]> getInfo() { return contacts; }
         public void setInfo(String[] s) { contacts.Add(s);}
 
-        public String get_sql_auth() { return SQLServerAuthentication; }
     }
 }
