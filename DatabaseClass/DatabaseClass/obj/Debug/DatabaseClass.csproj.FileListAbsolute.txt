@@ -18,23 +18,3 @@ C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\Dat
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.Likes.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.editProfileForm.resources
 C:\Users\matthew dunning\Documents\Visual Studio 2015\Projects\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.FilterForm.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.csprojResolveAssemblyReference.cache
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.editProfileForm.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.FilterForm.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.HomePage.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.LoginPage.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.matches.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.Likes.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.profile.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.UserInfo.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.ViewUsers.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.Welcome.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.Properties.Resources.resources
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.csproj.GenerateResource.Cache
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.exe
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\obj\Debug\DatabaseClass.pdb
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\DatabaseClass.exe.config
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\DatabaseClass.exe
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\DatabaseClass.pdb
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.dll
-C:\Users\marc0\Source\Repos\database_class\DatabaseClass\DatabaseClass\bin\Debug\MySql.Data.xml
