@@ -37,21 +37,19 @@ namespace DatabaseClass
 
 
 
+            /**
+             * 
+             *     THIS IS THE CORRECT QUERY TO GET RESULTS FOR THIS SECTION NEED TO IMPLEMENT IT THOUGH
+             *     
+                    select * from datapptho.match_list where glob_id = @glob_id
+                            and interested_in_id in (select M.glob_id
+                                                       from datapptho.match_list M
+                                                        where glob_id = M.glob_id
+                                                           and interested_in_id = @glob_id) // THIS NEEDS TO BE THE VALUE PASSED BY GLOBAL
+             
+             */
 
-
-            ListViewItem[] temp = new ListViewItem[1000];
-
-        /**
-         * 
-         *     THIS IS THE CORRECT QUERY TO GET RESULTS FOR THIS SECTION NEED TO IMPLEMENT IT THOUGH
-         *     
-                select * from datapptho.match_list where glob_id = @glob_id
-                        and interested_in_id in (select M.glob_id
-                                                   from datapptho.match_list M
-                                                    where glob_id = M.glob_id
-                                                       and interested_in_id = @glob_id) // THIS NEEDS TO BE THE VALUE PASSED BY GLOBAL
-         
-         */
+            ListViewItem items1 = null;
         MySqlDataReader read = null;
             string query = "select * from datapptho.match_list where glob_id = @glob_id and interested_in_id in (select M.glob_id from datapptho.match_list M where glob_id = M.glob_id and interested_in_id = @glob_id) ";
             using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
@@ -62,37 +60,38 @@ namespace DatabaseClass
                     cmd.Parameters.AddWithValue("@glob_id", global_reference.get_user_id());
                      read = cmd.ExecuteReader();
 
-                    int i = 0;
+                    int j = 0;
                     while (read.Read())
                     {
 
                         read.Read();
+                        int interested = (int)read.GetValue(0);
                         interested_in = (int)read.GetValue(1);
 
                         //this is the user that expresses interest in the currently logged in user
-                        ListViewItem items = new ListViewItem(interested_in.ToString(), 1);
+                       // items = new ListViewItem(interested.ToString(), 1);
+                       // items.SubItems.Add(interested_in.ToString());
                        
                     }
 
                     read.Close();
 
                 }
-                string query1 = " select phone_number from contact_info where globe_id = @gid ";
+                string query1 = " select phone_number , first_name from contact_info where globe_id = @gid ";
                 using (MySqlCommand cmd = new MySqlCommand(query1, con))
                 {
                     
                     cmd.Parameters.AddWithValue("@gid", interested_in.ToString());
                      read = cmd.ExecuteReader();
 
-                    int i = 0;
                     while (read.Read())
                     {
                         read.Read();
                         phone_number = (string)read.GetValue(0);
-                       
-                        // this should be the phone number from the db
-                        //.SubItems.Add(phone_number);
-                        i++;
+                        string nname = (string)read.GetValue(1);
+
+                        items1 = new ListViewItem(nname, 0);
+                        items1.SubItems.Add(phone_number);
                     }
                     read.Close();
                     con.Close();
@@ -101,7 +100,7 @@ namespace DatabaseClass
             }//end of sql connection
        
              //Add the items to the ListView.
-           // listView1.Items.AddRange(new ListViewItem[] { item2, item3 });
+           listView1.Items.AddRange(new ListViewItem[] {  items1 });
 
         }
 
