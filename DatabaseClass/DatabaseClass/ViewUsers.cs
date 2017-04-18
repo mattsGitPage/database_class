@@ -55,19 +55,15 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+            
+            //spawn th eprofile window for browsing 
             global_reference.setFlag(true);
-            global_reference.set_browse_id(22);
+            global_reference.AddToList(22);
+            global_reference.set_browse_id(global_reference.getList()[0]);
 
-            new profile().Show(); 
-
+            profile p = new profile();
+            p.Show(); 
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
