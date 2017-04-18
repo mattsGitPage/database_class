@@ -46,6 +46,29 @@ namespace DatabaseClass
 
         private List<String[]> contacts = null;
 
+
+        //The following data members are for use in the transition from the profile browser to the profile viewer spawned in viewuser.cs
+
+        private static Boolean flag_browse = false;
+        public void setFlag(Boolean s) { flag_browse = s; }
+        public Boolean getFlag() { return flag_browse; }
+
+        private static int browse_id;
+        public int get_browse_id() { return browse_id; }
+        public void set_browse_id(int id) { browse_id = id; }
+
+        private static List<int> ListOfIdsThatCameFromFilter = new List<int>();
+        public List<int> getList() { return ListOfIdsThatCameFromFilter; }
+        public void AddToList(int id) { ListOfIdsThatCameFromFilter.Add(id); }
+        public void ClearList() { ListOfIdsThatCameFromFilter.Clear(); }
+
+
+        //this allows Larry Matt and Gabe to only have to change one line of code to use the dbms on their machines. 
+        //bad design but effective. 
+        private String SQLServerAuthentication = "server=localhost; database=datapptho; user=root; password=mysql9001";
+
+        public string get_sql_auth() { return SQLServerAuthentication; }
+
         public static Global getInstance()
         {
             if (singleInstance == null)
