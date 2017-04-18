@@ -30,7 +30,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -74,7 +75,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -118,7 +120,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -162,7 +165,8 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -206,12 +210,14 @@ namespace DatabaseClass
             string interest = String.Empty;
             string intent = String.Empty;
 
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select P.first_name, P.age, P.about_me, P.city , O.intent , I.interest from profile P, objective O, interests I where global_id= @global_id and I.global_interest_id = @global_id and O.g_id = @global_id";
                 using (MySqlCommand cmd = new MySqlCommand(query, con))
                 {
                     con.Open();
+
                     cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
                     MySqlDataReader read = cmd.ExecuteReader();
 
