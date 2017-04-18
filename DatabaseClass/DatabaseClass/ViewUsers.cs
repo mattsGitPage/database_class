@@ -264,7 +264,7 @@ namespace DatabaseClass
             string city = String.Empty;
             string interest = String.Empty;
             string intent = String.Empty;
-
+            //this is a comment
             Global global_reference = Global.getInstance();
             using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
