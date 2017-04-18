@@ -35,9 +35,9 @@ namespace DatabaseClass
 
                 //queries to update the profile
                 // string test_begin = "BEGIN TRANSACTION;update profile set about_me = @about_me, city = @city, where global_id =@global_id ; update interests set interests = @interests, where global_interest_id = @global_id; update objective set intent = @intent, where g_id =@global_id;  COMMIT;";
-                string profile_query = "update profile set about_me = @about_me, city = @city, where global_id =@global_id ";
-                string interests_query = "update interests set interest = @interests, where global_interest_id = @global_id";
-                string objective_query = "update objective set intent = @intent, where g_id =@global_id";
+                string profile_query = "update profile set about_me = @about_me, city = @city where global_id =@global_id ";
+                string interests_query = "update interests set interest = @interests where global_interest_id = @global_id";
+                string objective_query = "update objective set intent = @intent where g_id =@global_id";
 
                 //update all tables
                 //TODO: add support for picture
