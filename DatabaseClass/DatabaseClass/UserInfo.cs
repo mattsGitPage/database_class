@@ -46,7 +46,8 @@ namespace DatabaseClass
                             //TODO save to database
                             var image = Bitmap.FromStream(myStream);
 
-                            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+                            Global global_reference = Global.getInstance();
+                            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
                             {
                                 string query = "insert into profile (picture) values (@picture)";
                                 using (MySqlCommand cmd = new MySqlCommand(query, con))
@@ -81,12 +82,13 @@ namespace DatabaseClass
             string interest = this.interests.Text.ToString();
             string intent = this.intent.Text.ToString();
             string phone = this.phone.Text.ToString();
-            
+
 
             /*
              * since we have a dependency on global id we need to insert a corresponding dating_users entity into the date_user table
              */
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
+            Global global_reference = Global.getInstance();
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 //TODO: generate new icon for browse section of user
                 //add created profile
@@ -102,8 +104,8 @@ namespace DatabaseClass
             }
 
             //open sql connection
-            using (MySqlConnection con = new MySqlConnection("server=localhost; database=datapptho; user=group1; password=Password1"))
-                {
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
+            {
                   //TODO: generate new icon for browse section of user
                     //add created profile
                     string query = "insert into profile ( first_name, last_name, gender, about_me, dob, age, city) values (@first_name , @last_name, @gender, @about_me,  @dob, @age , @city)";
