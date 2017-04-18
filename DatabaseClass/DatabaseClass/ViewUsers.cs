@@ -48,6 +48,30 @@ namespace DatabaseClass
                 }
             }
 
+            int ii = 0;
+            List<int> temp = global_reference.getList();
+
+            try
+            {
+                this.button1.Text = temp[0].ToString();
+                this.button2.Text = temp[1].ToString();
+                this.button3.Text = temp[2].ToString();
+                this.button4.Text = temp[3].ToString();
+                this.button5.Text = temp[4].ToString();
+                this.button6.Text = temp[5].ToString();
+                this.button7.Text = temp[6].ToString();
+                this.button8.Text = temp[7].ToString();
+                this.button9.Text = temp[8].ToString();
+                this.button10.Text = temp[9].ToString();
+                this.button11.Text = temp[10].ToString();
+                this.button12.Text = temp[11].ToString();
+              
+            }
+            catch ( System.Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+            }
+
         }
   
      
@@ -88,10 +112,10 @@ namespace DatabaseClass
                 }
             }
             
-            //spawn th eprofile window for browsing 
+            //spawn the profile window for browsing 
             global_reference.setFlag(true);
-            global_reference.AddToList(22);
-            global_reference.set_browse_id(global_reference.getList()[0]);
+            
+            global_reference.set_browse_id(int.Parse(button1.Text));
 
             profile p = new profile();
             p.Show(); 
@@ -133,14 +157,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+           
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button2.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -178,14 +202,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button5.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -223,14 +247,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button7.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -269,14 +293,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button4.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -314,14 +338,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button6.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -359,14 +383,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button8.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -404,14 +428,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button10.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -449,14 +473,14 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button3.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -494,14 +518,13 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button9.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -539,14 +562,13 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button11.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void button12_Click(object sender, EventArgs e)
@@ -584,14 +606,13 @@ namespace DatabaseClass
                     con.Close();
                 }
             }
-            //change the values on the profile for user to view
-            //name.Text = first_name;
-            //this.age.Text = agee.ToString();
-            //this.city.Text = city;
-            //boutme.Text = aboutMe;
-            //this.interest.Text = interest;
-            //this.intent.Text = intent;
-            //TODO: add picture... box already on profile
+            //spawn the profile window for browsing 
+            global_reference.setFlag(true);
+
+            global_reference.set_browse_id(int.Parse(button12.Text));
+
+            profile p = new profile();
+            p.Show();
         }
 
         private void ViewUsers_Load(object sender, EventArgs e)
