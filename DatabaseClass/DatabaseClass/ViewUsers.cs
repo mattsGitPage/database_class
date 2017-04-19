@@ -23,6 +23,40 @@ namespace DatabaseClass
             Global global_reference = Global.getInstance();
             global_reference.ClearList();
             //Debug.WriteLine("DebugFrom ViewUsers: " +global_reference.getIntent());
+
+            //ADD THE AGGRAGATE
+
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
+            {
+                string query = "select count(*) from profile P, objective O  where global_id = O.g_id and city like \"%" + global_reference.getlocation() + "%\"" + " and age >= " +
+                    global_reference.getMinAge() + " and age <= " + global_reference.getMaxAge() + " and intent  like \"%" + global_reference.getIntent() + "%\"" + " and gender = \"" + global_reference.getGender().ToUpper()[0] + "\"";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
+                    MySqlDataReader read = cmd.ExecuteReader();
+
+
+                    //asign values
+                    read.Read();
+                    
+
+                   
+                
+                   MessageBox.Show("The Filter returned "+ read.GetValue(0)+" people");
+                        //DEBUG
+                        //  Debug.WriteLine((Int32)read.GetValue(0));
+
+
+
+                    con.Close();
+                }
+            }
+
+
+
+
+
             using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
             {
                 string query = "select global_id from profile P, objective O  where global_id = O.g_id and city like \"%" + global_reference.getlocation() + "%\"" + " and age >= " +
