@@ -22,7 +22,7 @@ namespace DatabaseClass
 
             string[] s = new string[1000];
             MySqlDataReader read = null;
-            string query = "select first_name from datapptho.profile  ";
+            string query = "SELECT P.first_name from datapptho.profile P where exists(select O.intent from datapptho.objective O where O.intent like \"%romance%\" and P.global_id = O.g_id) ";
 
             
             using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
@@ -37,8 +37,9 @@ namespace DatabaseClass
                     while (read.Read())
                     {
                         
-                        read.Read();
-                        s[j] = (string)read.GetValue(0);
+                        //read.Read();
+                        s[j] = read.GetValue(0).ToString();
+                        System.Diagnostics.Debug.Write(read.GetValue(0).ToString());
                         j++;
                     }
                     
