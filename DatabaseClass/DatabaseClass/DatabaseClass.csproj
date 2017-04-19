@@ -139,6 +139,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Data\admin.csv" />
+    <None Include="Data\blacklist.csv" />
+    <None Include="Data\contact_info.csv" />
+    <None Include="Data\credentials.csv" />
+    <None Include="Data\dating_users.csv" />
+    <None Include="Data\interests.csv" />
+    <None Include="Data\match_list.csv" />
+    <None Include="Data\minimum_requirements.csv" />
+    <None Include="Data\objective.csv" />
+    <None Include="Data\profile.csv" />
+    <None Include="Data\profile_bad.csv" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

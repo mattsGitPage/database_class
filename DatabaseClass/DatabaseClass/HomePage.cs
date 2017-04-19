@@ -38,10 +38,10 @@ namespace DatabaseClass
         //shows a list of users to like
         private void browse_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             ViewUsers vu = new ViewUsers();
             vu.Show();
-            this.Close();
+            //this.Close();
         }
 
         //this will show matches with their contact info

@@ -45,13 +45,15 @@ namespace DatabaseClass
                         //the user is browsing someone elses profile not their own
                         cmd.Parameters.AddWithValue("@global_id", global_reference.get_browse_id());
                         global_reference.setFlag(false);
-                       // this.edit.Visible = false;
+                        // this.edit.Visible = false;
+                        this.btn_like.Visible = true; 
                     }
                     else
                     {
                         //the user is viewing their own profile
                         cmd.Parameters.AddWithValue("@global_id", global_reference.get_user_id());
-                       // this.edit.Visible = true;
+                        // this.edit.Visible = true;
+                        this.btn_like.Visible = false; 
                     }
                     MySqlDataReader read =  cmd.ExecuteReader();
 
@@ -98,6 +100,31 @@ namespace DatabaseClass
             h.Show();
             this.Close();
 
+        }
+
+        private void btn_like_Click(object sender, EventArgs e)
+        {
+            //add the person who's page this is to the matchlist of the current user.
+
+            int currentUserId = global_reference.get_user_id();
+            int currentBrowseID = global_reference.get_browse_id();
+
+            using (MySqlConnection con = new MySqlConnection(global_reference.get_sql_auth()))
+            {
+                string query = "INSERT INTO match_list (glob_id, interested_in_id) VALUES (" + currentUserId + "," + currentBrowseID +");";
+                using (MySqlCommand cmd = new MySqlCommand(query, con))
+                {
+                    con.Open();
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }catch (System.Exception ee )
+                    {
+                        System.Diagnostics.Debug.Write(ee.ToString());
+                    }
+                }
+            }
         }
     }
 }
